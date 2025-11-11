@@ -11,7 +11,7 @@ document.write("<h2>" + poblacion + "</h2>" +
                 "<br>" +
                 "<h2>" + provincia + "</h2" + 
                 "<br>" +
-                "<h2>" + calle + "</h2"
+                "<h2>" + calle + "</h2>"
 );
 
 alert(poblacion);
