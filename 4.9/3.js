@@ -9,3 +9,4 @@ if(!(sexo == 'h' || 'H' || 'm' || 'M')) {
         alert("Has seleccionado el sexo mujer.");
 }
 
+document.write("<a href=\"4.html\">Ejercicio 4.9 - 4</a>");
