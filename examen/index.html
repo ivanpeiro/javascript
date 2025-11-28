@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Examen</title>
+        <script>
+
+
+                function calcimc() {
+                        var peso = parseFloat(prompt("Introduce tu peso en kilos: "));
+                        var altura = parseFloat(prompt("Introduce tu altura en metros: "));
+                        var imc = ((peso) / (altura*altura));
+                        alert("Tu IMC es de " + imc);
+
+                        if(imc < 18.5) {
+                                alert("Bajo peso.");
+                        } else if(18.5 > imc < 24.9) {
+                                alert("Peso Normal.");
+                        } else if(24.9 > imc < 29.9) {
+                                alert("Sobrepeso");
+                        } else if (imc > 30) {
+                                alert("Obesidad");
+                        }
+                }
+
+                function impar() {
+                        var numero = 0;
+                        var numero2 = 0;
+
+                        do {
+                                numero = parseInt(prompt("Introduce un número:"));
+                        } while(!(numero >= 0));
+
+                        do {
+                                numero2 = parseInt(prompt("Introduce otro número:"));
+                        } while(!(numero2 > 1));
+
+                        document.write("Entre los números " + numero + " y " + numero2 + " los siguientes son impar:<br>");
+                        for(var i = numero; i < numero2; i++) {
+                                if((i%2) == 1) {
+                                        document.write(i + " es impar<br>");
+                                }
+                        }
+                }
+
+                function contras() {
+                        var contra = "";
+                        var tieneMayuscula = false;
+                        var tieneCaracter = false;
+                        do{
+                                contra = prompt("Introduce tu contraseña:");
+                        } while(contra.length < 8);
+
+                        for(var i = 0; i < contra.length - 1; i++) {
+                                
+                                if(contra.charAt(i) == 'A' || contra.charAt(i) == 'E' || contra.charAt(i) == 'I' || contra.charAt(i) == 'O' || contra.charAt(i) == 'U') { 
+                                        tieneMayuscula = true;
+                                }
+
+                                if(contra.charAt(i) == '$' || contra.charAt(i) == '#' || contra.charAt(i) == '!' || contra.charAt(i) == '@') { 
+                                        tieneCaracter = true;
+                                }
+
+                        }
+
+                        if(tieneMayuscula == true && tieneCaracter == true) { 
+                                document.write("Contraseña " + contra + " Segura!");
+                        }
+                        if(tieneMayuscula == false) {
+                                document.write("Contraseña no Segura: No tiene al menos una vocal mayuscula.<br>");
+                        }
+                        if(tieneCaracter == false) {
+                                document.write("Contraseña no Segura: No tiene al menos uno de los siguientes caracteres $!@#<br>");
+                        }
+
+
+                }
+
+        </script>
+</head>
+<body>
+        <p>Iván Peiró Cabañas</p>
+
+        <button onclick="calcimc();">Calcular IMC</button>
+        <button onclick="impar();">Calcular Números impar</button>
+        <button onclick="contras();">Comprobar Contraseña</button>
+
+</body>
+</html>
